@@ -11,7 +11,8 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-barcode": "^1.4.6",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-to-print": "^2.14.10"
   },
   "devDependencies": {
     "@types/node": "^18.11.15",

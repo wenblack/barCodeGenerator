@@ -4,8 +4,21 @@
   padding: 2rem;
   text-align: center;
 }
+
 li {
   list-style: none;
+}
+
+li:nth-child(1) {
+  display: none;
+}
+
+li:nth-child(1) img {
+  display: none;
+}
+
+li:nth-child(1) h1 {
+  display: none;
 }
 
 .card {
@@ -16,6 +29,8 @@ li {
   color: #888;
 }
 
-::placeholder {
-  color: black;
+@media print {
+  body.print-element *:not(.print) {
+    display: none;
+  }
 }
