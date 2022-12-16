@@ -24,7 +24,7 @@ export function List() {
       setTaskNumber(taskNumber + 1);
       let taskFormatted = newTask.split(",");
       console.log(taskFormatted);
-      tasks.push(newTask);
+      setTasks(tasks.concat(taskFormatted));
       console.log(taskNumber);
       console.log(tasks);
     }
