@@ -11,7 +11,7 @@ export function Logo() {
             <path fill="none" d="M0 0H256V256H0z" />
             <path
                 fill="none"
-                stroke="white"
+                stroke="#00F377"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={16}
@@ -19,7 +19,7 @@ export function Logo() {
             />
             <path
                 fill="none"
-                stroke="white"
+                stroke="#00F377"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={16}
@@ -27,7 +27,7 @@ export function Logo() {
             />
             <path
                 fill="none"
-                stroke="white"
+                stroke="#00F377"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={16}
@@ -35,7 +35,7 @@ export function Logo() {
             />
             <path
                 fill="none"
-                stroke="white"
+                stroke="#00F377"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={16}
@@ -43,7 +43,7 @@ export function Logo() {
             />
             <path
                 fill="none"
-                stroke="red"
+                stroke="#001A70"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={16}
@@ -51,7 +51,7 @@ export function Logo() {
             />
             <path
                 fill="none"
-                stroke="red"
+                stroke="#001A70"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={16}
@@ -59,7 +59,7 @@ export function Logo() {
             />
             <path
                 fill="none"
-                stroke="red"
+                stroke="#001A70"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={16}
@@ -67,7 +67,7 @@ export function Logo() {
             />
             <path
                 fill="none"
-                stroke="red"
+                stroke="#001A70"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={16}

@@ -55,7 +55,6 @@ export function List() {
           type="button"
           style={{
             marginTop: "1rem",
-            backgroundColor: '#000',
             color: 'white',
             fontWeight: 'bold'
           }}
@@ -79,7 +78,6 @@ export function List() {
             onClick={print}
             type="button"
             style={{
-              backgroundColor: '#000',
               color: 'white',
               fontWeight: 'bold'
             }}>Imprimir</button>
@@ -87,8 +85,8 @@ export function List() {
       </form>
       <ul className="Lista" id="Lista">
         {tasks.map((tarefa) => (
-          <li style={{ display: 'flex', alignContent: 'center', justifyContent: 'center', border: '1px solid black' }}>
-            <Barcode height={50} displayValue={isHide} value={tarefa} width={widht}></Barcode>
+          <li style={{ display: 'flex', alignContent: 'center', justifyContent: 'center', border: '1px dashed black' }}>
+            <Barcode height={50} displayValue={isHide} value={tarefa} width={widht} fontSize={32} ></Barcode>
             <img src={mro} style={{
               height: '3cm',
               width: '5cm'
