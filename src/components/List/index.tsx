@@ -92,11 +92,11 @@ export function List() {
     setIsHide(e.target.checked);
   }
   return (
-    <div>
-      <form id="search-form" onSubmit={submitted} className="no-print">
+    <div id="tickets">
+      <form id="text-ticket" onSubmit={submitted} className="no-print">
         <input
           type="text"
-          form="search-form"
+          form="text-ticket"
           placeholder="Digite o código"
           onChange={handleChange}
           style={{
@@ -109,7 +109,8 @@ export function List() {
           }}
         />
         <button
-          form="search-form"
+          id="create-ticket"
+          form="text-ticket"
           onClick={add}
           type="button"
           style={{
@@ -121,6 +122,7 @@ export function List() {
           Adicionar
         </button>
         <span
+          id="ticket-options"
           style={{
             display: "flex",
             alignItems: "center",
@@ -137,7 +139,7 @@ export function List() {
           />
           <label htmlFor="displayValue">Mostrar valor</label>
           <select
-            name="select"
+            name="size"
             defaultValue={2}
             style={{
               outline: "none",
@@ -156,6 +158,7 @@ export function List() {
           <button
             onClick={print}
             type="button"
+            id="print-tickets"
             style={{
               color: "white",
               fontWeight: "bold"

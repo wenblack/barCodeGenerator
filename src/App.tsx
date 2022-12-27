@@ -5,11 +5,11 @@ import { Logo } from "./assets/logo";
 function App() {
   return (
     <>
-      <div className="App">
+      <main className="App">
         <Logo></Logo>
         <h2>Gerador de código de Barras</h2>
         <List></List>
-      </div>
+      </main>
     </>
   );
 }
