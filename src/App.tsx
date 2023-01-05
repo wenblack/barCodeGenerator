@@ -7,7 +7,7 @@ function App() {
     <>
       <main className="App">
         <Logo></Logo>
-        <h2>Gerador de código de Barras</h2>
+        <h2 style={{ marginTop: '40px' }}>Gerador de código de Barras</h2>
         <List></List>
       </main>
     </>

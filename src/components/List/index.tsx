@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Barcode from "react-barcode";
 import mro from "../../assets/logo_mro.png";
+import { Logo } from "../../assets/logo";
+import { LogoWithoutWords } from "../../assets/LogoWithoutWords";
 
 export function List() {
   const [taskNumber, setTaskNumber] = useState(1);
@@ -33,14 +35,17 @@ export function List() {
       );
     } else {
       return (
-        <ul className="Lista" id="Lista">
+        <ul className="Lista" id="Lista" style={{
+          marginTop: '3rem'
+        }}>
           {tasks.map((tarefa) => (
             <li
               style={{
                 display: "flex",
                 alignContent: "center",
                 justifyContent: "center",
-                border: "1px dashed black"
+                border: "1px dashed black",
+                alignItems: 'center',
               }}
             >
               <Barcode
@@ -50,13 +55,7 @@ export function List() {
                 width={width}
                 fontSize={32}
               ></Barcode>
-              <img
-                src={mro}
-                style={{
-                  height: "3cm",
-                  width: "5cm"
-                }}
-              ></img>
+              <LogoWithoutWords></LogoWithoutWords>
             </li>
           ))}
         </ul>
@@ -64,7 +63,7 @@ export function List() {
     }
   };
 
-  useEffect(() => {}, [newTask, taskNumber, tasks, isHide, width]);
+  useEffect(() => { }, [newTask, taskNumber, tasks, isHide, width]);
   function selectChange(e: any) {
     setWidth(e.target.value);
   }
