@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Barcode from "react-barcode";
-import mro from "../../assets/logo_mro.png";
-import { Logo } from "../../assets/logo";
+import ReactToPrint from "react-to-print";
 import { LogoWithoutWords } from "../../assets/LogoWithoutWords";
 
 export function List() {
@@ -10,55 +9,70 @@ export function List() {
   const [newTask, setNewTask] = useState("");
   const [isHide, setIsHide] = useState(false);
   const [width, setWidth] = useState(2);
+  const componentRef = useRef<HTMLDivElement>(null)
+
 
   const DefaultCode = () => {
     if (taskNumber === 1) {
       return (
-        <ul className="Lista" id="Lista">
-          <li
-            style={{
-              display: "flex",
-              alignContent: "center",
-              justifyContent: "center",
-              border: "1px dashed black"
-            }}
-          >
-            <Barcode
-              height={50}
-              displayValue={isHide}
-              value={"exemplo"}
-              width={width}
-              fontSize={32}
-            ></Barcode>
-          </li>
-        </ul>
-      );
-    } else {
-      return (
-        <ul className="Lista" id="Lista" style={{
-          marginTop: '3rem'
-        }}>
-          {tasks.map((tarefa) => (
+        <div >
+          <ul className="Lista" id="Lista">
             <li
               style={{
                 display: "flex",
                 alignContent: "center",
                 justifyContent: "center",
-                border: "1px dashed black",
-                alignItems: 'center',
+                border: "1px dashed black"
               }}
             >
               <Barcode
                 height={50}
                 displayValue={isHide}
-                value={tarefa}
+                value={"exemplo"}
                 width={width}
                 fontSize={32}
               ></Barcode>
-              <LogoWithoutWords></LogoWithoutWords>
             </li>
-          ))}
-        </ul>
+          </ul>
+        </div>
+
+      );
+    } else {
+      return (
+
+        <div ref={componentRef}>
+          <ReactToPrint
+            trigger={() => <button>imprimir</button>}
+            content={() => componentRef.current}
+          />
+          <ul className="Lista" id="Lista" style={{
+            marginTop: '10cm',
+            width: '10cm'
+          }}>
+            {tasks.map((tarefa) => (
+              <li
+                style={{
+                  display: "flex",
+                  alignContent: "center",
+                  justifyContent: "center",
+                  border: "1px dashed black",
+                  alignItems: 'center',
+                  maxWidth: '10cm',
+                  height: '5cm',
+                }}
+              >
+                <Barcode
+                  height={50}
+                  displayValue={isHide}
+                  value={tarefa}
+                  width={width}
+                  fontSize={32}
+                ></Barcode>
+                <LogoWithoutWords></LogoWithoutWords>
+              </li>
+            ))}
+          </ul>
+        </div>
       );
     }
   };
