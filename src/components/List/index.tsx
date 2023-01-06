@@ -15,8 +15,10 @@ export function List() {
   const DefaultCode = () => {
     if (taskNumber === 1) {
       return (
-        <div >
-          <ul className="Lista" id="Lista">
+        <div style={{
+          marginTop: '3rem'
+        }}>
+          <ul className="Lista" id="Lista" >
             <li
               style={{
                 display: "flex",
@@ -41,12 +43,8 @@ export function List() {
       return (
 
         <div ref={componentRef}>
-          <ReactToPrint
-            trigger={() => <button>imprimir</button>}
-            content={() => componentRef.current}
-          />
+
           <ul className="Lista" id="Lista" style={{
-            marginTop: '10cm',
             width: '10cm'
           }}>
             {tasks.map((tarefa) => (
@@ -55,10 +53,10 @@ export function List() {
                   display: "flex",
                   alignContent: "center",
                   justifyContent: "center",
-                  border: "1px dashed black",
                   alignItems: 'center',
                   maxWidth: '10cm',
                   height: '5cm',
+                  border: "1px dashed black"
                 }}
               >
                 <Barcode
@@ -168,17 +166,15 @@ export function List() {
             <option value={2}>Média</option>
             <option value={3}>Grande</option>
           </select>
-          <button
-            onClick={print}
-            type="button"
-            id="print-tickets"
-            style={{
-              color: "white",
-              fontWeight: "bold"
-            }}
-          >
-            Imprimir
-          </button>
+
+          <ReactToPrint
+            trigger={() => <button type="button" id="print-tickets"
+              style={{
+                color: "white",
+                fontWeight: "bold"
+              }}>imprimir</button>}
+            content={() => componentRef.current}
+          />
         </span>
       </form>
       <DefaultCode />
