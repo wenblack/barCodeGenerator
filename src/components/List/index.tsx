@@ -54,8 +54,8 @@ export function List() {
                   alignContent: "center",
                   justifyContent: "center",
                   alignItems: 'center',
-                  maxWidth: '10cm',
-                  height: '5cm',
+                  maxWidth: '9cm',
+                  height: '2cm',
                   border: "1px dashed black"
                 }}
               >
@@ -64,7 +64,7 @@ export function List() {
                   displayValue={isHide}
                   value={tarefa}
                   width={width}
-                  fontSize={32}
+                  fontSize={18}
                 ></Barcode>
                 <LogoWithoutWords></LogoWithoutWords>
               </li>
