@@ -66,7 +66,16 @@ export function List() {
                   width={width}
                   fontSize={18}
                 ></Barcode>
-                <LogoWithoutWords></LogoWithoutWords>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                  <p style={{ fontSize: 20 }}>
+                    {tarefa}
+                  </p>
+                </div>
               </li>
             ))}
           </ul>
