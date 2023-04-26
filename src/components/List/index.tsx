@@ -153,7 +153,9 @@ export function List() {
             outline: "none",
             border: "none",
             borderRadius: "10px",
-            marginRight: "1rem"
+            marginRight: "1rem",
+            width: '8rem'
+
           }}
         />
         <input
@@ -167,7 +169,8 @@ export function List() {
             outline: "none",
             border: "none",
             borderRadius: "10px",
-            marginRight: "1rem"
+            marginRight: "1rem",
+            width: '8rem'
           }}
         />
         <button
