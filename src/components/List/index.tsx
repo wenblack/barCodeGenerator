@@ -9,6 +9,9 @@ export function List() {
   const [newTask, setNewTask] = useState("");
   const [isHide, setIsHide] = useState(false);
   const [width, setWidth] = useState(2);
+  const [positionNumber, setpositionNumber] = useState(1);
+  const [positions, setpositions] = useState(null || [""]);
+  const [newPosition, setNewPosition] = useState("");
   const componentRef = useRef<HTMLDivElement>(null)
 
 
@@ -42,12 +45,18 @@ export function List() {
     } else {
       return (
 
-        <div ref={componentRef}>
+        <div ref={componentRef}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginTop: '3rem'
+          }}>
 
           <ul className="Lista" id="Lista" style={{
             width: '10cm'
           }}>
-            {tasks.map((tarefa) => (
+            {tasks.map((tarefa, i) => (
               <li
                 style={{
                   display: "flex",
@@ -72,9 +81,11 @@ export function List() {
                     alignItems: 'center',
                     justifyContent: 'center'
                   }}>
-                  <p style={{ fontSize: 20 }}>
-                    {tarefa}
-                  </p>
+
+                  <span style={{ fontSize: 20 }}>
+                    {positions[i]}
+                  </span>
+
                 </div>
               </li>
             ))}
@@ -84,7 +95,7 @@ export function List() {
     }
   };
 
-  useEffect(() => { }, [newTask, taskNumber, tasks, isHide, width]);
+  useEffect(() => { }, [newTask, taskNumber, tasks, isHide, width, newPosition, positionNumber, positions]);
   function selectChange(e: any) {
     setWidth(e.target.value);
   }
@@ -96,6 +107,7 @@ export function List() {
     add();
   }
   function add() {
+    addPostion()
     if (newTask === "" || null || undefined) {
       alert("Digite algo para pesquisar");
     } else if (taskNumber === 1) {
@@ -111,14 +123,44 @@ export function List() {
   function hide(e: any) {
     setIsHide(e.target.checked);
   }
+  function handlePositionChange(e: any) {
+    setNewPosition(e.target.value);
+  }
+  function addPostion() {
+    if (newPosition === "" || null || undefined) {
+      alert("Digite algo para pesquisar");
+    } else if (positionNumber === 1) {
+      setpositionNumber(positionNumber + 1);
+      let positionFormatted = newPosition.split(",");
+      setpositions(positionFormatted);
+    } else {
+      setpositionNumber(positionNumber + 1);
+      let positionFormatted = newPosition.split(",");
+      setpositions(positions.concat(positionFormatted));
+    }
+  }
   return (
     <div id="tickets">
       <form id="text-ticket" onSubmit={submitted} className="no-print">
         <input
           type="text"
           form="text-ticket"
-          placeholder="Digite o código"
+          placeholder="Código verificador"
           onChange={handleChange}
+          style={{
+            margin: "0 auto",
+            padding: "10px",
+            outline: "none",
+            border: "none",
+            borderRadius: "10px",
+            marginRight: "1rem"
+          }}
+        />
+        <input
+          type="text"
+          form="text-ticket"
+          placeholder="Posição"
+          onChange={handlePositionChange}
           style={{
             margin: "0 auto",
             padding: "10px",
