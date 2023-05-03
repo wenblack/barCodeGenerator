@@ -60,21 +60,15 @@ export function List() {
               <li
                 style={{
                   display: "flex",
+                  flexDirection: "column",
                   alignContent: "center",
                   justifyContent: "center",
                   alignItems: 'center',
-                  maxWidth: '9cm',
-                  height: '2cm',
+                  maxWidth: '7cm',
+                  height: '3cm',
                   border: "1px dashed black"
                 }}
               >
-                <Barcode
-                  height={50}
-                  displayValue={isHide}
-                  value={tarefa}
-                  width={width}
-                  fontSize={18}
-                ></Barcode>
                 <div
                   style={{
                     display: 'flex',
@@ -82,11 +76,18 @@ export function List() {
                     justifyContent: 'center'
                   }}>
 
-                  <span style={{ fontSize: 20 }}>
+                  <span style={{ fontSize: 25, textTransform: "uppercase" }}>
                     {positions[i]}
                   </span>
 
                 </div>
+                <Barcode
+                  height={50}
+                  displayValue={isHide}
+                  value={tarefa}
+                  width={width}
+                  fontSize={18}
+                ></Barcode>
               </li>
             ))}
           </ul>
